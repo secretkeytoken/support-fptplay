@@ -10,7 +10,7 @@ variables:
   SERVICE_NAME: "web-fptplay-blog"
   PVC_NAME: "none"
   PATH_MOUNT: "none"
-  PORT: "80"
+  PORT: "443"
   SECRET_MOUNT_PATH: "none"
   SECRET_KEY: "none"
   SECRET_MOUNT_PATH: "/var/www/html/wp-config.php"
