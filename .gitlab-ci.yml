@@ -40,7 +40,7 @@ stages:
         export KUBE_CONFIG=${KUBE_CONFIG_STAGING}
         SIZE_PVC="none"
         REPLICA_COUNT=1
-        INGRESS_HOST=dev.fptplay.vn
+        INGRESS_HOST=blog-dev.fptplay.vn
         LIMIT_CPU=1000m
         LIMIT_RAM=1000Mi
         REQUEST_CPU=50m
