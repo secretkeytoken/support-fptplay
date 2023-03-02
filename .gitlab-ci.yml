@@ -74,7 +74,7 @@ stages:
   }
 
   build(){
-    docker build --pull -t ${DOCKER_PRIVATE_REGISTRY}/${IMAGE_TAG_PREFIX}/${SERVICE_NAME}:${CI_COMMIT_REF_NAME}-build-${CI_PIPELINE_ID} --build-arg branch=${CI_COMMIT_REF_NAME} --build-arg http_proxy="http://proxy.hcm.fpt.vn:80" --build-arg https_proxy="http://proxy.hcm.fpt.vn:80" .
+    DOCKER_BUILDKIT=1 docker build --pull -t ${DOCKER_PRIVATE_REGISTRY}/${IMAGE_TAG_PREFIX}/${SERVICE_NAME}:${CI_COMMIT_REF_NAME}-build-${CI_PIPELINE_ID} --build-arg branch=${CI_COMMIT_REF_NAME} --build-arg http_proxy="http://proxy.hcm.fpt.vn:80" --build-arg https_proxy="http://proxy.hcm.fpt.vn:80" .
     echo "Pushing to Gitlab Container Registry..."
     docker push ${DOCKER_PRIVATE_REGISTRY}/${IMAGE_TAG_PREFIX}/${SERVICE_NAME}:${CI_COMMIT_REF_NAME}-build-${CI_PIPELINE_ID}
   }
