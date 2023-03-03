@@ -3,7 +3,7 @@ image: harbor.fptplay.net/image-base/kube-tool:master-build-5641
 variables:
   DOCKER_DRIVER: "overlay"
   HELM_REPO: "https://chart.fptplay.net"
-  HELM_CHART: "fplay/fplfplv2"
+  HELM_CHART: "fplay/fplv2"
   NAME_SECRET: "web-fptplay-blog-${CI_ENVIRONMENT_NAME}"
   NAME_SPACE: "fplay-web"
   IMAGE_TAG_PREFIX: "fplay-web"
