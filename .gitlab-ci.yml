@@ -5,6 +5,7 @@ variables:
   HELM_REPO: "https://chart.fptplay.net"
   HELM_CHART: "fplay/fplv2"
   NAME_SECRET: "web-fptplay-blog-${CI_ENVIRONMENT_NAME}"
+  NAME_SECRET2: "web-fptplay-blog2-${CI_ENVIRONMENT_NAME}"
   NAME_SPACE: "fplay-web"
   IMAGE_TAG_PREFIX: "fplay-web"
   SERVICE_NAME: "web-fptplay-blog"
@@ -97,6 +98,7 @@ stages:
     --set service.internalPort=${PORT} \
     --set replicaCount=${REPLICA_COUNT} \
     --set namesecret=${NAME_SECRET} \
+    --set namesecret2=${NAME_SECRET2} \
     --set Configmap.enabled=${ENABLE_FILE_VARIABLES} \
     --set Configmap.enabled2=${ENABLE_FILE_VARIABLES2} \
     --set Secret.enabled=${ENABLE_OS_VARIABLES} \
