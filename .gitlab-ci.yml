@@ -3,7 +3,7 @@ image: harbor.fptplay.net/image-base/kube-tool:master-build-5641
 variables:
   DOCKER_DRIVER: "overlay"
   HELM_REPO: "https://chart.fptplay.net"
-  HELM_CHART: "fplay/fpl"
+  HELM_CHART: "fplay/fplfplv2"
   NAME_SECRET: "web-fptplay-blog-${CI_ENVIRONMENT_NAME}"
   NAME_SPACE: "fplay-web"
   IMAGE_TAG_PREFIX: "fplay-web"
@@ -11,10 +11,11 @@ variables:
   PVC_NAME: "none"
   PATH_MOUNT: "none"
   PORT: "443"
-  SECRET_MOUNT_PATH: "none"
-  SECRET_KEY: "none"
   SECRET_MOUNT_PATH: "/var/www/html/wp-config.php"
   SECRET_KEY: "wp-config.php"
+  SECRET_MOUNT_PATH2: "/var/www/html.htaccess"
+  SECRET_KEY2: ".htaccess"
+  ENABLE_FILE_VARIABLES2: "true"
   ENABLE_FILE_VARIABLES: "true"
   ENABLE_OS_VARIABLES: "false"
   ENABLE_PVC: "false"
@@ -97,6 +98,7 @@ stages:
     --set replicaCount=${REPLICA_COUNT} \
     --set namesecret=${NAME_SECRET} \
     --set Configmap.enabled=${ENABLE_FILE_VARIABLES} \
+    --set Configmap.enabled2=${ENABLE_FILE_VARIABLES2} \
     --set Secret.enabled=${ENABLE_OS_VARIABLES} \
     --set persistentVolume.enabled=${ENABLE_PVC} \
     --set persistentVolume.existingClaim=${PVC_NAME} \
@@ -106,6 +108,8 @@ stages:
     --set replicaCount=${REPLICA_COUNT} \
     --set Secret.mountPath=${SECRET_MOUNT_PATH} \
     --set Secret.key=${SECRET_KEY} \
+    --set Secret.mountPath2=${SECRET_MOUNT_PATH2} \
+    --set Secret.key2=${SECRET_KEY2} \
     --set limit.limitsCpu=$LIMIT_CPU \
     --set limit.limitsMemory=$LIMIT_RAM \
     --set request.requestsCpu=$REQUEST_CPU \
