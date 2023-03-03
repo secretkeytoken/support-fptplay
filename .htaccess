@@ -1,6 +1,8 @@
 # BEGIN W3TC CDN
 <IfModule mod_headers.c>
     Header set Access-Control-Allow-Origin "*"
+    ## Prevent mixed-content warnings
+    # Header always set Content-Security-Policy "upgrade-insecure-requests;"
 </IfModule>
 # END W3TC CDN
 # BEGIN W3TC Browser Cache
