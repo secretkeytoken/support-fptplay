@@ -23,16 +23,16 @@ define('WP_CACHE', true); // Added by W3 Total Cache
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'test' );
+define( 'DB_NAME', 'fplay_blog' );
 
 /** Database username */
-define( 'DB_USER', 'root' );
+define( 'DB_USER', 'fpl-blog' );
 
 /** Database password */
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', 'PassW0rd:misql' );
 
 /** Database hostname */
-define( 'DB_HOST', 'localhost:3308' );
+define( 'DB_HOST', '118.68.171.122:3306' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
@@ -59,6 +59,10 @@ define( 'AUTH_SALT',        'MKY>cP45D;_IU(U*bSX[u~Oo6Hrl(nD?V86nBHNp4Tk00Z&J{EA
 define( 'SECURE_AUTH_SALT', '8KuM5*o6KChd#^Bq}c-[ZiR+D>bc:5O( 0@Z:88nL?w~U.^$u#nGUOoavSJ6SSjl' );
 define( 'LOGGED_IN_SALT',   'uOXHLRQA!_/eog;Fl#CQ**|]a0yIO0=Kk_HWjwMb]*9zXC}^,H>R1CJE=C&yRt9c' );
 define( 'NONCE_SALT',       'y 30Q4ID%O1z7feZS<n+gM!Y4pCNSsbo:3(3l!Cu~<jTjk:5[y/kB%GW+=rY_Fg$' );
+define( 'WP_HOME', 'https://blog-dev.fptplay.vn' );
+define( 'WP_SITEURL', 'https://blog-dev.fptplay.vn' );
+define('FORCE_SSL', true);
+define('FORCE_SSL_ADMIN',true);
 
 /**#@-*/
 
