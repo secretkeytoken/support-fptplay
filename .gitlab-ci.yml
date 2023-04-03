@@ -4,11 +4,11 @@ variables:
   DOCKER_DRIVER: "overlay"
   HELM_REPO: "https://chart.fptplay.net"
   HELM_CHART: "fplay/fplv2"
-  NAME_SECRET: "web-fptplay-blog-${CI_ENVIRONMENT_NAME}-bk"
-  NAME_SECRET2: "web-fptplay-blog2-${CI_ENVIRONMENT_NAME}-bk"
+  NAME_SECRET: "web-fptplay-blog-${CI_ENVIRONMENT_NAME}"
+  NAME_SECRET2: "web-fptplay-blog2-${CI_ENVIRONMENT_NAME}"
   NAME_SPACE: "fplay-web"
   IMAGE_TAG_PREFIX: "fplay-web"
-  SERVICE_NAME: "web-fptplay-blog-bk"
+  SERVICE_NAME: "web-fptplay-blog"
   PVC_NAME: "none"
   PATH_MOUNT: "none"
   PORT: "443"
@@ -42,7 +42,7 @@ stages:
         export KUBE_CONFIG=${KUBE_CONFIG_STAGING}
         SIZE_PVC="none"
         REPLICA_COUNT=1
-        INGRESS_HOST=blog-dev-bk.fptplay.vn
+        INGRESS_HOST=blog-dev.fptplay.vn
         LIMIT_CPU=1000m
         LIMIT_RAM=1000Mi
         REQUEST_CPU=50m
@@ -141,9 +141,11 @@ build_image:
     - clean
   only:
     refs:
-      - backup
+      - dev
+      - staging
+      - master
 
-backup_deploy:
+develop_deploy:
   stage: deploy
 
   before_script:
@@ -155,7 +157,7 @@ backup_deploy:
     name: dev
   only:
     refs:
-      - backup
+      - dev
 
 # production_deploy:
 #   stage: deploy
