@@ -19,7 +19,7 @@ variables:
   ENABLE_FILE_VARIABLES2: "true"
   ENABLE_FILE_VARIABLES: "true"
   ENABLE_OS_VARIABLES: "false"
-  ENABLE_PVC: "true"
+  ENABLE_PVC: "false"
   ENABLE_PORT: "true"
   ENABLE_ALIAS: "false"
   ALIAS_IP: "10.0.4.6"
