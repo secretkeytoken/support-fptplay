@@ -26,13 +26,13 @@ define('WP_CACHE', true); // Added by W3 Total Cache
 define( 'DB_NAME', 'fplay_blog' );
 
 /** Database username */
-define( 'DB_USER', 'fpl-blog' );
+define( 'DB_USER', 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'PassW0rd:misql' );
+define( 'DB_PASSWORD', '123@abc' );
 
 /** Database hostname */
-define( 'DB_HOST', '118.68.171.122:3306' );
+define( 'DB_HOST', '118.69.166.183:3306' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
