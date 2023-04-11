@@ -9,8 +9,8 @@ variables:
   NAME_SPACE: "fplay-web"
   IMAGE_TAG_PREFIX: "fplay-web"
   SERVICE_NAME: "web-fptplay-blog-bk"
-  PVC_NAME: "none"
-  PATH_MOUNT: "none"
+  PVC_NAME: "web-fptplay-blog-bk"
+  PATH_MOUNT: "/var/www/html"
   PORT: "443"
   SECRET_MOUNT_PATH: "/var/www/html/wp-config.php"
   SECRET_KEY: "wp-config.php"
@@ -40,7 +40,7 @@ stages:
     init_kube_config() {
       if [ $CI_ENVIRONMENT_NAME == "dev"  ]; then
         export KUBE_CONFIG=${KUBE_CONFIG_STAGING}
-        SIZE_PVC="none"
+        SIZE_PVC="10Gi"
         REPLICA_COUNT=1
         INGRESS_HOST=blog-dev-bk.fptplay.vn
         LIMIT_CPU=1000m
