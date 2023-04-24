@@ -14,7 +14,7 @@ variables:
   PORT: "443"
   SECRET_MOUNT_PATH: "/var/www/html/wp-config.php"
   SECRET_KEY: "wp-config.php"
-  SECRET_MOUNT_PATH2: "/var/www/html/.htaccess"
+  SECRET_MOUNT_PATH2: "/var/www/html.htaccess"
   SECRET_KEY2: ".htaccess"
   ENABLE_FILE_VARIABLES2: "true"
   ENABLE_FILE_VARIABLES: "true"
